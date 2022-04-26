@@ -289,9 +289,8 @@ namespace VideoControl
                 m_url = u.URL;
                 if (string.IsNullOrEmpty(m_url) == false)
                 {
-                    m_vlc.Stop();
-                    m_vlc.SetMedia(m_url, this.Handle, out string outMessage);
-                    m_vlc.Play();
+                    m_lastPlayedIsFile = false;
+                    Play(out string outMessage);
                     if (pCallback != null)
                     {
                         foreach (IVideoControl p in pCallback)

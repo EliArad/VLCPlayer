@@ -40,7 +40,7 @@ namespace VideoControl
             this.txtURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtURL.Location = new System.Drawing.Point(11, 26);
             this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(299, 26);
+            this.txtURL.Size = new System.Drawing.Size(637, 26);
             this.txtURL.TabIndex = 0;
             // 
             // label1
@@ -76,7 +76,7 @@ namespace VideoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 108);
+            this.ClientSize = new System.Drawing.Size(650, 108);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);
