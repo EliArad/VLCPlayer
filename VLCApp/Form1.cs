@@ -133,7 +133,10 @@ namespace VLCApp
 
         public void NotifyTime(string time, long time_t, int instance = 0)
         {
+            
             INVOKERS.InvokeControlText(lblTime, time);
+            if (m_trackDown == true)
+                return;
             INVOKERS.InvokeTrackerValue(trackBar1, (int)(time_t / 1000));
         }
 
