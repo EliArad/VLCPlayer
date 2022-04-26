@@ -121,10 +121,13 @@ namespace VLCApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.videoControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.videoControl1.FileName = "";
             this.videoControl1.Location = new System.Drawing.Point(0, 1);
             this.videoControl1.Name = "videoControl1";
             this.videoControl1.Size = new System.Drawing.Size(848, 473);
             this.videoControl1.TabIndex = 0;
+            this.videoControl1.Time = ((long)(0));
+            this.videoControl1.URL = "";
             // 
             // panel1
             // 

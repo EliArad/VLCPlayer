@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvokersLib", "..\InvokersL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedBulb", "..\LedBulb\LedBulb.csproj", "{C96503E7-FE6E-4A05-8C92-DFD142B52429}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PulseButton", "..\PulseButton\PulseButton\PulseButton.csproj", "{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleSwitch", "..\ToggleSwitch\ToggleSwitch\ToggleSwitch.csproj", "{49B88FFA-F02C-4709-BA65-9F8996444ECD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VLCApp", "..\VLCApp\VLCApp.csproj", "{22670347-F8AB-4D4A-9862-5F19B22DA75C}"
@@ -39,10 +37,6 @@ Global
 		{C96503E7-FE6E-4A05-8C92-DFD142B52429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C96503E7-FE6E-4A05-8C92-DFD142B52429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C96503E7-FE6E-4A05-8C92-DFD142B52429}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49B88FFA-F02C-4709-BA65-9F8996444ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49B88FFA-F02C-4709-BA65-9F8996444ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49B88FFA-F02C-4709-BA65-9F8996444ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU

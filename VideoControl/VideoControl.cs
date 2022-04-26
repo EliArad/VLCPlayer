@@ -121,7 +121,7 @@ namespace VideoControl
                 {
                     foreach (IVideoControl p in pCallback)
                     {
-                        p.NotifyPlay(m_url, true);
+                        p.NotifyPlay(m_fileName, true);
                     }
                 }
             }
