@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoControl", "VideoControl.csproj", "{F1DA84A0-E667-4929-BAA0-62ECDEB8EC9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VLCPlayerLib", "..\VLCPlayerLib\VLCPlayerLib.csproj", "{70A46879-88FE-4456-A185-C3FF8A48B5D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvokersLib", "..\InvokersLib\InvokersLib.csproj", "{E40F14D8-9643-4903-A79A-4A658FF0C732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedBulb", "..\LedBulb\LedBulb.csproj", "{C96503E7-FE6E-4A05-8C92-DFD142B52429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PulseButton", "..\PulseButton\PulseButton\PulseButton.csproj", "{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleSwitch", "..\ToggleSwitch\ToggleSwitch\ToggleSwitch.csproj", "{49B88FFA-F02C-4709-BA65-9F8996444ECD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VLCApp", "..\VLCApp\VLCApp.csproj", "{22670347-F8AB-4D4A-9862-5F19B22DA75C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1DA84A0-E667-4929-BAA0-62ECDEB8EC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1DA84A0-E667-4929-BAA0-62ECDEB8EC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1DA84A0-E667-4929-BAA0-62ECDEB8EC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1DA84A0-E667-4929-BAA0-62ECDEB8EC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A46879-88FE-4456-A185-C3FF8A48B5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A46879-88FE-4456-A185-C3FF8A48B5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A46879-88FE-4456-A185-C3FF8A48B5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A46879-88FE-4456-A185-C3FF8A48B5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40F14D8-9643-4903-A79A-4A658FF0C732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40F14D8-9643-4903-A79A-4A658FF0C732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40F14D8-9643-4903-A79A-4A658FF0C732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40F14D8-9643-4903-A79A-4A658FF0C732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96503E7-FE6E-4A05-8C92-DFD142B52429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96503E7-FE6E-4A05-8C92-DFD142B52429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96503E7-FE6E-4A05-8C92-DFD142B52429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96503E7-FE6E-4A05-8C92-DFD142B52429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A4D90E-2DEB-4BD7-82B6-16860C90B4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B88FFA-F02C-4709-BA65-9F8996444ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B88FFA-F02C-4709-BA65-9F8996444ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B88FFA-F02C-4709-BA65-9F8996444ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B88FFA-F02C-4709-BA65-9F8996444ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22670347-F8AB-4D4A-9862-5F19B22DA75C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22670347-F8AB-4D4A-9862-5F19B22DA75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22670347-F8AB-4D4A-9862-5F19B22DA75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22670347-F8AB-4D4A-9862-5F19B22DA75C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94DD20B0-0808-4704-B6EA-1323DB8A9C8A}
+	EndGlobalSection
+EndGlobal
