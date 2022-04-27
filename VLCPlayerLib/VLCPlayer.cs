@@ -11,6 +11,7 @@ namespace VLCPlayerLib
     public interface IVLCPlayer
     {
         void NotifyTime(string time, long time_t, int instance = 0);
+        void NotifyDuration(string time, long mvt, int instance = 0);
     }
     public class VLCPlayer
     {
@@ -68,6 +69,9 @@ namespace VLCPlayerLib
                 media = new Media(libVLC, new Uri(url));
                 mp = new MediaPlayer(media);
                 mp.TimeChanged += Mp_TimeChanged;
+                // Position changed is not good
+                //mp.PositionChanged += Mp_PositionChanged;
+                mp.LengthChanged += Mp_LengthChanged;
                 return true;
             }
             catch (Exception err)
@@ -84,6 +88,9 @@ namespace VLCPlayerLib
                 media = new Media(libVLC, new Uri(url));
                 mp = new MediaPlayer(media);
                 mp.TimeChanged += Mp_TimeChanged;
+                mp.LengthChanged += Mp_LengthChanged;
+                // Position changed is not good
+                //mp.PositionChanged += Mp_PositionChanged;
                 if (handle != IntPtr.Zero)
                 {
                     mp.Hwnd = handle;
@@ -95,6 +102,18 @@ namespace VLCPlayerLib
                 outMessage = err.Message;
                 return false;
             }
+        }
+
+        private void Mp_LengthChanged(object sender, MediaPlayerLengthChangedEventArgs e)
+        {
+        
+            string time = TimeSpan.FromMilliseconds(e.Length).ToString(@"hh\:mm\:ss");
+            pCallback.NotifyDuration(time, e.Length, m_instance);
+        }
+
+        private void Mp_PositionChanged(object sender, MediaPlayerPositionChangedEventArgs e)
+        {
+            Console.WriteLine(e.Position * 1000);
         }
 
         private void Mp_TimeChanged(object sender, MediaPlayerTimeChangedEventArgs e)

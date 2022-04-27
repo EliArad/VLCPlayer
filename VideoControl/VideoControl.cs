@@ -16,9 +16,7 @@ namespace VideoControlLib
     public interface IVideoControl
     {
         void NotifyPlay(string URL, bool isFile, int instance = 0);
-        //void NotifyTime(string time, long time_t, int instance = 0);
         void NotifyFullScreen(bool f, int instance = 0);
-        void NotifyDuration(string time, long mvt, int instance = 0);
     }
     public partial class VideoControl : UserControl, IVideoControl
     {
@@ -143,29 +141,7 @@ namespace VideoControlLib
             }
         }
 
-        void ShowDuration()
-        {
-            var t = new Thread(() =>
-            {
-                while (m_playing == true)
-                {
-                    long mvt = m_vlc.Length;
-                    string time = TimeSpan.FromMilliseconds(mvt).ToString(@"hh\:mm\:ss");                    
-                    if (mvt > 0)
-                    {                        
-                        foreach (IVideoControl p in pCallback)
-                        {
-                            p.NotifyDuration(time, mvt);
-                        }
-
-                        return;
-                    }
-                    Thread.Sleep(100);
-                }
-            });
-            t.Start();
-
-        }
+         
         public bool Play(out string outMessage)
         {
              
@@ -191,29 +167,14 @@ namespace VideoControlLib
                 outMessage = "State error";
                 return false;
             }
-
             
             m_playing = true;
-            m_vlc.Play();
-            ShowDuration();
-            //ShowTime();
+            m_vlc.Play();            
             outMessage = string.Empty;
             return true;
         }
 
-
-        //async void ShowTime()
-        //{
-        //    await Task.Run(() =>
-        //    {
-        //        if (m_task != null)
-        //            m_task.Wait();
-        //    });
-            
-        //    //m_task = new Task(ShowTimeTask);
-        //    //m_task.Start();
-
-        //}
+ 
         public bool Init(IVLCPlayer p, out string outMessage)
         {
             if (m_vlc.Init(p,out outMessage) == true)
@@ -245,30 +206,11 @@ namespace VideoControlLib
             if (m_vlc != null)
                 m_vlc.Stop();
         }
-        //void ShowTimeTask()
-        //{
-        //    while (m_playing == true)
-        //    {
-        //        long t = m_vlc.Time;
-        //        string time = TimeSpan.FromMilliseconds(t).ToString(@"hh\:mm\:ss");
-        //        foreach (IVideoControl p in pCallback)
-        //        {
-        //            p.NotifyTime(time, t);
-        //        }
-        //        Thread.Sleep(1000);
-        //    }
-        //}
 
         public void NotifyPlay(string URL, bool isFile, int instance = 0)
         {
-            ShowDuration();
-            //ShowTime();
+
         }
-
-        //public void NotifyTime(string time, long time_t, int instance = 0)
-        //{
-
-        //}
 
         public void NotifyFullScreen(bool f, int instance = 0)
         {
@@ -277,11 +219,6 @@ namespace VideoControlLib
                 return;
             this.Visible = true;
             this.BringToFront();
-        }
-
-        public void NotifyDuration(string time, long mvt, int instance = 0)
-        {
-
         }
 
         private void streamURLToolStripMenuItem_Click(object sender, EventArgs e)
