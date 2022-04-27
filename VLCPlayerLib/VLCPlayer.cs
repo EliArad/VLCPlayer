@@ -13,12 +13,24 @@ namespace VLCPlayerLib
         void NotifyTime(string time, long time_t, int instance = 0);
         void NotifyDuration(string time, long mvt, int instance = 0);
     }
+
+
+
+    public class DebugMessagesEventArgs : EventArgs
+    {
+        public int severity { get; set; }
+        public DateTime Dated { get; set; }
+        public string message { get; set; }
+    }
     public class VLCPlayer
     {
 
         LibVLC libVLC;
         Media media;
         MediaPlayer mp;
+
+        public event EventHandler<DebugMessagesEventArgs> DebugMessages;
+ 
 
         int m_instance = 0;
         public VLCPlayer(int instance = 0)
@@ -33,6 +45,13 @@ namespace VLCPlayerLib
             {
                 Core.Initialize();
                 pCallback = p;
+
+                DebugMessages?.Invoke(this, new DebugMessagesEventArgs
+                {
+                      Dated =  DateTime.Now,
+                       message = "Initializing", 
+                        severity = 0
+                });
 
                 libVLC = new LibVLC(enableDebugLogs: false);
                 //mp.EnableHardwareDecoding = true;

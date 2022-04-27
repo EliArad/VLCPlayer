@@ -42,7 +42,12 @@ namespace DBConnLib
 
         public void Default()
         {
-          
+            m_config.URL1 = "rtsp://ariell:Aa!12345678@46.210.98.215:554/unicast/c1/s0/live";
+            m_config.URL2 = "rtsp://ariell:Aa!12345678@46.210.98.215:554/unicast/c2/s0/live";
+            m_config.URL3 = "rtsp://ariell:Aa!12345678@46.210.98.215:554/unicast/c3/s0/live";
+            m_config.URL4 = "rtsp://ariell:Aa!12345678@46.210.98.215:554/unicast/c4/s0/live";
+            m_config.URL5 = "rtsp://ariell:Aa!12345678@46.210.98.215:554/unicast/c5/s0/live";
+            m_config.URL6 = "rtsp://ariell:Aa!12345678@46.210.98.215:554/unicast/c6/s0/live";
         }
          
         public string Save()

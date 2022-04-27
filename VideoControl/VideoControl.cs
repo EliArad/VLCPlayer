@@ -29,9 +29,16 @@ namespace VideoControlLib
           
             m_lastWidth = this.Width;
             m_lastHeight = this.Height;
+
+            m_vlc.DebugMessages += M_vlc_DebugMessages;
  
             this.KeyDown += VideoControl_KeyDown;
             pCallback.Add(this);
+        }
+
+        private void M_vlc_DebugMessages(object sender, DebugMessagesEventArgs e)
+        {
+            Console.WriteLine("This is just example of how to do event with arguments:" + e.Dated);
         }
 
         private void VideoControl_KeyDown(object sender, KeyEventArgs e)
