@@ -47,7 +47,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "{#SOURCE}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SOURCE}\*.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SOURCE}\*.config"; DestDir: "{app}"; Flags: ignoreversion
-//Source: "{#SOURCE}\*.xml"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SOURCE}\*.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SOURCE}\libvlc\*.*"; DestDir: "{app}\libvlc"; Flags: ignoreversion recursesubdirs
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files

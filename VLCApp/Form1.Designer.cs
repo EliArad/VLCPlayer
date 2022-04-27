@@ -1,4 +1,6 @@
 ﻿
+using VideoControlLib;
+
 namespace VLCApp
 {
     partial class Form1
@@ -36,7 +38,7 @@ namespace VLCApp
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.lblMovieDuration = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.videoControl1 = new VideoControl.VideoControl();
+            this.videoControl1 = new VideoControl();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -163,7 +165,7 @@ namespace VLCApp
 
         #endregion
 
-        private VideoControl.VideoControl videoControl1;
+        private VideoControl videoControl1;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;

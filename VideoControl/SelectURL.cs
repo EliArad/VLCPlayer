@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VideoControl
+namespace VideoControlLib
 {
     public partial class SelectURL : Form
     {

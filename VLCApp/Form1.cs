@@ -2,7 +2,7 @@
 using InvokersLib;
 using System;
 using System.Windows.Forms;
-using VideoControl;
+using VideoControlLib;
 
 namespace VLCApp
 {

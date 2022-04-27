@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VLCPlayerLib;
 
-namespace VideoControl
+namespace VideoControlLib
 {
     public interface IVideoControl
     {
@@ -40,7 +40,8 @@ namespace VideoControl
 
         private void VideoControl_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Escape && m_fullScreen == false)
+                return;
             this.Width = Screen.PrimaryScreen.Bounds.Width;
             this.Height = Screen.PrimaryScreen.Bounds.Height;
 
@@ -239,8 +240,10 @@ namespace VideoControl
         public void Stop()
         {
             m_playing = false;
-            m_task.Wait();
-            m_vlc.Stop();
+            if (m_task != null)
+                m_task.Wait();
+            if (m_vlc != null)
+                m_vlc.Stop();
         }
         void ShowTimeTask()
         {
@@ -304,6 +307,13 @@ namespace VideoControl
         public void Close()
         {
             Stop();
+        }
+        public void ShowBorders(bool show)
+        {
+            if (show == true)
+                this.BorderStyle = BorderStyle.Fixed3D;
+            else
+                this.BorderStyle = BorderStyle.None;
         }
     }
 }

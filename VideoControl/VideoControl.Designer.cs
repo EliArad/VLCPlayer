@@ -1,5 +1,5 @@
 ﻿
-namespace VideoControl
+namespace VideoControlLib
 {
     partial class VideoControl
     {
