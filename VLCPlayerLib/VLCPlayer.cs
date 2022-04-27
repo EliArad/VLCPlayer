@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace VLCPlayerLib
 {
+
+    public interface IVLCPlayer
+    {
+        void NotifyTime(string time, long time_t, int instance = 0);
+    }
     public class VLCPlayer
     {
 
@@ -14,11 +19,19 @@ namespace VLCPlayerLib
         Media media;
         MediaPlayer mp;
 
-        public bool Init(out string outMessage, string url = "")
+        int m_instance = 0;
+        public VLCPlayer(int instance = 0)
+        {
+            m_instance = instance;
+
+        }
+        IVLCPlayer pCallback = null;
+        public bool Init(IVLCPlayer p, out string outMessage, string url = "")
         {
             try
             {
                 Core.Initialize();
+                pCallback = p;
 
                 libVLC = new LibVLC(enableDebugLogs: false);
                 //mp.EnableHardwareDecoding = true;
@@ -54,7 +67,7 @@ namespace VLCPlayerLib
                 outMessage = string.Empty;
                 media = new Media(libVLC, new Uri(url));
                 mp = new MediaPlayer(media);
-                
+                mp.TimeChanged += Mp_TimeChanged;
                 return true;
             }
             catch (Exception err)
@@ -70,6 +83,7 @@ namespace VLCPlayerLib
                 outMessage = string.Empty;
                 media = new Media(libVLC, new Uri(url));
                 mp = new MediaPlayer(media);
+                mp.TimeChanged += Mp_TimeChanged;
                 if (handle != IntPtr.Zero)
                 {
                     mp.Hwnd = handle;
@@ -82,6 +96,13 @@ namespace VLCPlayerLib
                 return false;
             }
         }
+
+        private void Mp_TimeChanged(object sender, MediaPlayerTimeChangedEventArgs e)
+        {
+            string time = TimeSpan.FromMilliseconds(e.Time).ToString(@"hh\:mm\:ss");
+            pCallback.NotifyTime(time, e.Time, m_instance);
+        }
+
         public bool EnableMouseInput
         {
             set

@@ -3,10 +3,11 @@ using InvokersLib;
 using System;
 using System.Windows.Forms;
 using VideoControlLib;
+using VLCPlayerLib;
 
 namespace VLCApp
 {
-    public partial class Form1 : Form, IVideoControl
+    public partial class Form1 : Form, IVideoControl, IVLCPlayer
     {
 
         public Form1()
@@ -15,7 +16,7 @@ namespace VLCApp
 
             AppSettings.Instance.Load("VLCApp.json");
 
-            if (videoControl1.Init(out string outMessage) == false)
+            if (videoControl1.Init(this,out string outMessage) == false)
             {
                 MessageBox.Show(outMessage);
                 return;

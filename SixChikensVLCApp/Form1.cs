@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VideoControlLib;
+using VLCPlayerLib;
 
 namespace SixChikensVLCApp
 {
-    public partial class Form1 : Form, IVideoControl
+    public partial class Form1 : Form, IVideoControl, IVLCPlayer
     {
 
         List<VideoControl> m_videoControls = new List<VideoControl>();
@@ -25,7 +26,7 @@ namespace SixChikensVLCApp
 
                 foreach (VideoControlLib.VideoControl c in vc)
                 {
-                    if (c.Init(out string outMessage) == false)
+                    if (c.Init(this,out string outMessage) == false)
                     {
                         MessageBox.Show(outMessage);
                         return;
