@@ -20,11 +20,9 @@ namespace VideoControlLib
     }
     public partial class VideoControl : UserControl, IVideoControl
     {
-        bool m_lastPlayedIsFile = true;
-        Task m_task;
-        bool m_playing = false;
+        bool m_lastPlayedIsFile = true;        
         VLCPlayer m_vlc = new VLCPlayer();
-            
+        bool m_playing = false;            
         public VideoControl()
         {
             InitializeComponent();
@@ -201,8 +199,7 @@ namespace VideoControlLib
         public void Stop()
         {
             m_playing = false;
-            if (m_task != null)
-                m_task.Wait();
+
             if (m_vlc != null)
                 m_vlc.Stop();
         }
