@@ -1,5 +1,4 @@
 ﻿using Bulb;
-using JCS;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -76,20 +75,6 @@ namespace InvokersLib
             }
         }
 
-        public static void SetChecked(JCS.ToggleSwitch control, bool e)
-        {
-            if (control.InvokeRequired)
-            {
-                control.BeginInvoke((MethodInvoker)delegate ()
-                {
-                    control.Checked = e;
-                });
-            }
-            else
-            {
-                control.Checked = e;
-            }
-        }
         public static void SetChecked(CheckBox control, bool e)
         {
             if (control.InvokeRequired)

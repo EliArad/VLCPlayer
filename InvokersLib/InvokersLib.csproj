@@ -52,10 +52,6 @@
       <Project>{C96503E7-FE6E-4A05-8C92-DFD142B52429}</Project>
       <Name>LedBulb</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ToggleSwitch\ToggleSwitch\ToggleSwitch.csproj">
-      <Project>{49B88FFA-F02C-4709-BA65-9F8996444ECD}</Project>
-      <Name>ToggleSwitch</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
